@@ -62,6 +62,12 @@ rmse_am4
 rmse_am5
 rmse_am6
 
+rr2 <- c(rmse_am1, rmse_am2, rmse_am3, rmse_am4, rmse_am5, rmse_am6)
+per_col <- c(2,5,10,15,20,25)
+rmse_df112 <- data.frame(percentage = per_col,error = rr2);
+barplot(rmse_df112$error,  ylab = "RMSE", main="RMSE distribution of missing data (2 to 25%)")
+
+
 normalize<- function(x) {
   return((x-min(x)) / (max(x)- min(x)))
 }

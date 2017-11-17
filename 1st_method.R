@@ -69,6 +69,11 @@ rmse4
 rmse5
 rmse6
 
+rr <- c(rmse1, rmse2, rmse3, rmse4, rmse5, rmse6)
+per_col <- c(2,5,10,15,20,25)
+rmse_df111 <- data.frame(percentage = per_col,error = rr);
+barplot(rmse_df111$error,  ylab = "RMSE", main="RMSE distribution of missing data (2 to 25%)")
+
 #For k-NN
 normalize<- function(x) {
   return((x-min(x)) / (max(x)- min(x)))
